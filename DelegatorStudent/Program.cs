@@ -10,6 +10,18 @@ namespace DelegatorStudent
     {
         static void Main(string[] args)
         {
+            Students students = new Students();
+            students.Add(new Student("함기훈", 4.5));
+            students.Add(new Student("박성래", 4.4));
+            students.Add(new Student("마이콜", 1.0));
+
+            students.Print();
+            students.Print((s) =>
+            {
+                Console.WriteLine("*******");
+                Console.WriteLine("이름 : " + s.Name);
+                Console.WriteLine("학점 : " + s.Score);
+            });
         }
     }
 }
